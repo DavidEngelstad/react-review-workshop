@@ -19,15 +19,18 @@ class App extends Component {
 
   render() {
     const { first, last } = this.state;
-
-    return (
-      <div>
-        {/* First: <input name="first" onChange={this.onChangeHandler} />
-        Last: <input name="last" onChange={this.onChangeHandler} />
-        Hello from Component, {first} {last} */}
-        <List />
-      </div>
-    );
+    if (this.state.first === 'David' && this.state.last === 'Engelstad') {
+      return <List />;
+    } else {
+      return (
+        <div>
+          First: <input name="first" onChange={this.onChangeHandler} />
+          <br />
+          Last: <input name="last" onChange={this.onChangeHandler} />
+          {/* Hello from Component, {first} {last} */}
+        </div>
+      );
+    }
   }
 }
 

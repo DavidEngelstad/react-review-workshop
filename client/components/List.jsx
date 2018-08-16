@@ -34,11 +34,11 @@ class List extends Component {
       <div>
         Item: <input name="item" onChange={this.onChangeHandler} />
         <button onClick={this.onSubmitHandler}>Submit</button>
-        <div>
+        <ul>
           {this.state.items.map(item => (
             <ListEntry key={item} item={item} click={this.onClickEvent} />
           ))}
-        </div>
+        </ul>
       </div>
     );
   }
