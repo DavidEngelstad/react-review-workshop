@@ -4,24 +4,26 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      first: ''
+      first: '',
+      last: ''
     };
-    this.enterFirstNameInput = this.enterFirstNameInput.bind(this);
+    this.onChangeHandler = this.onChangeHandler.bind(this);
   }
 
-  enterFirstNameInput(e) {
+  onChangeHandler(e) {
     this.setState({
-      first: e.target.value
+      [e.target.name]: e.target.value
     });
   }
 
   render() {
-    const { last } = this.props;
+    const { first, last } = this.state;
 
     return (
       <div>
-        First: <input name="first" onChange={this.enterFirstNameInput} />
-        Hello from Component, {this.state.first} {last}
+        First: <input name="first" onChange={this.onChangeHandler} />
+        Last: <input name="last" onChange={this.onChangeHandler} />
+        Hello from Component, {first} {last}
       </div>
     );
   }
