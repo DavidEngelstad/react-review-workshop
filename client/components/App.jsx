@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import List from './List.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -21,9 +22,10 @@ class App extends Component {
 
     return (
       <div>
-        First: <input name="first" onChange={this.onChangeHandler} />
+        {/* First: <input name="first" onChange={this.onChangeHandler} />
         Last: <input name="last" onChange={this.onChangeHandler} />
-        Hello from Component, {first} {last}
+        Hello from Component, {first} {last} */}
+        <List />
       </div>
     );
   }
