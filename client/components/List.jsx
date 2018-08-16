@@ -10,6 +10,7 @@ class List extends Component {
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
+    this.onClickEvent = this.onClickEvent.bind(this);
   }
 
   onChangeHandler(e) {
@@ -24,6 +25,10 @@ class List extends Component {
     });
   }
 
+  onClickEvent() {
+    console.log('Clicked');
+  }
+
   render() {
     return (
       <div>
@@ -31,7 +36,7 @@ class List extends Component {
         <button onClick={this.onSubmitHandler}>Submit</button>
         <div>
           {this.state.items.map(item => (
-            <ListEntry key={item} item={item} />
+            <ListEntry key={item} item={item} click={this.onClickEvent} />
           ))}
         </div>
       </div>
