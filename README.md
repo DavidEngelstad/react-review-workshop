@@ -3,9 +3,9 @@
 HRLA24-react-review
 
 #Start Server<br/>
-npm install
-npm run build
-npm start
+npm install<br/>
+npm run build<br/>
+npm start<br/>
 
 #Exercise-1 Rendering React to DOM<br/>
 Render "Hello from React" to the div in index.html with an id of "root".
