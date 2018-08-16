@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ListEntry from './ListEntry.jsx';
 
 class List extends Component {
   constructor(props) {
@@ -18,12 +19,9 @@ class List extends Component {
   }
 
   onSubmitHandler(e) {
-    this.setState(
-      {
-        items: [...this.state.items, this.state.item]
-      },
-      () => console.log(this.state)
-    );
+    this.setState({
+      items: [...this.state.items, this.state.item]
+    });
   }
 
   render() {
@@ -31,6 +29,11 @@ class List extends Component {
       <div>
         Item: <input name="item" onChange={this.onChangeHandler} />
         <button onClick={this.onSubmitHandler}>Submit</button>
+        <div>
+          {this.state.items.map(item => (
+            <ListEntry key={item} item={item} />
+          ))}
+        </div>
       </div>
     );
   }
