@@ -19,6 +19,7 @@ class App extends Component {
 
   render() {
     const { first, last } = this.state;
+    return <List />;
     if (this.state.first === 'David' && this.state.last === 'Engelstad') {
       return <List />;
     } else {
@@ -26,8 +27,8 @@ class App extends Component {
         <div>
           First: <input name="first" onChange={this.onChangeHandler} />
           <br />
-          Last: <input name="last" onChange={this.onChangeHandler} />
-          {/* Hello from Component, {first} {last} */}
+          Password:{' '}
+          <input name="last" type="password" onChange={this.onChangeHandler} />
         </div>
       );
     }

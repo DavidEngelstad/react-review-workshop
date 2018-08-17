@@ -5,8 +5,8 @@ class List extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: '',
-      items: []
+      todo: '',
+      todos: []
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
@@ -14,29 +14,42 @@ class List extends Component {
   }
 
   onChangeHandler(e) {
+    console.log(e.target.name);
     this.setState({
       [e.target.name]: e.target.value
     });
   }
 
   onSubmitHandler(e) {
+    e.preventDefault();
     this.setState({
-      items: [...this.state.items, this.state.item]
+      todos: [...this.state.todos, this.state.todo]
     });
+    e.target.reset();
   }
 
-  onClickEvent() {
-    console.log('Clicked');
+  deleteOnClick(index) {
+    const todos = this.state.todos.slice();
+    todos.splice(index, 1);
+    this.setState({ todos: todos });
   }
 
   render() {
     return (
       <div>
-        Item: <input name="item" onChange={this.onChangeHandler} />
-        <button onClick={this.onSubmitHandler}>Submit</button>
+        <form onSubmit={e => this.onSubmitHandler(e)}>
+          Todo: <input name="todo" onChange={this.onChangeHandler} />
+          <br />
+          <button>Submit</button>
+        </form>
         <ul>
-          {this.state.items.map(item => (
-            <ListEntry key={item} item={item} click={this.onClickEvent} />
+          {this.state.todos.map((item, index) => (
+            <ListEntry
+              key={item}
+              item={item}
+              index={index}
+              click={this.deleteOnClick}
+            />
           ))}
         </ul>
       </div>
