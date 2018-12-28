@@ -26,7 +26,7 @@ Inside of your class component, create an input field. Build out some functional
 Repeat the process to your last name.
 
 #Exercise-7 Add Another Component<br/>
-Inside your components folder, create another file called List.jsx. Build out another stateful component. Add an string and an array object in state. Create another input field. Build out functionality that will allow you to add text to the string element in state. Build out functionality that will allow you to add the string stored in state to the array stored in state. Then add three elements to the array.
+Inside your components folder, create another file called List.jsx. Build out another stateful component. Add a string and an array object in state. Create another input field. Build out functionality that will allow you to add text to the string element in state. Build out functionality that will allow you to add the string stored in state to the array stored in state. Then add three elements to the array.
 
 #Exercise-8 Mapping Elements<br/>
 Create another functional component called ListEntry.jsx in your components folder. Develop some functionality that will render the elements stored in the array in List.jsx to the page.
